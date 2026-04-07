@@ -19,6 +19,3 @@ python -m ipykernel install --user --name=voyager_env --display-name "Voyager (P
 echo "Starting Jupyter Notebook..."
 jupyter notebook
 
-## TODO Start the MCP servers
-# Weather MCP
-# News MCP
