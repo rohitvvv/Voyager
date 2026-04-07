@@ -13,10 +13,6 @@ fi
 
 source voyager_env/bin/activate
 
-# Install dependencies if needed
-#pip install -q ipykernel langchain-ollama mcp python-dotenv
-#pip install git+https://github.com/microagents/mcp-weather-free
-
 # Register kernel
 python -m ipykernel install --user --name=voyager_env --display-name "Voyager (Python 3)"
 
