@@ -2,7 +2,7 @@
 
 # Ensure Ollama models are available (won't start interactive shell)
 echo "Ensuring models are available..."
-ollama pull qwen3:0.6b
+ollama pull qwen2.5:3b
 ollama pull smollm2:135m
 
 # Setup virtual environment
