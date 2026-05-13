@@ -1,21 +1,25 @@
 #/bin/bash
 
-# Ensure Ollama models are available (won't start interactive shell)
+# Ensure Ollama models are available
 echo "Ensuring models are available..."
 ollama pull qwen2.5:3b
 ollama pull smollm2:135m
 
 # Setup virtual environment
 if [ ! -d "voyager_env" ]; then
-    echo "Creating virtual environment..."
-    python -m venv voyager_env
+  echo "Creating virtual environment..."
+  python -m venv voyager_env
 fi
 
 source voyager_env/bin/activate
+
+# Install missing dependencies
+echo "Installing/Updating dependencies..."
+pip install --upgrade pip
+pip install ipykernel notebook mcp python-dotenv langchain-ollama
 
 # Register kernel
 python -m ipykernel install --user --name=voyager_env --display-name "Voyager (Python 3)"
 
 echo "Starting Jupyter Notebook..."
 jupyter notebook
-
